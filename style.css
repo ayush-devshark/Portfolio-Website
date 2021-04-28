@@ -12,6 +12,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 .center {
@@ -97,6 +98,13 @@ html {
     height: 4rem;
     background-color: #e41c6f;
     box-shadow: 0.2rem 0.2rem 0.5rem #555;
+    position: absolute;
+    z-index: 300;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
 }
 .navbar-link {
     font-size: 1.7rem;
@@ -112,6 +120,10 @@ html {
     color: #fff;
 }
 
+.change.navbar-link {
+    color: #fff;
+}
+
 .navbar-link::before {
     content: '';
     width: 0%;
@@ -124,6 +136,10 @@ html {
 }
 
 .navbar-link:hover::before {
+    width: 130%;
+}
+
+.change.navbar-link::before {
     width: 130%;
 }
 /* End of Navbar */
@@ -166,10 +182,11 @@ html {
 }
 
 .progress-percent {
-    width: 90%;
+    width: 0;
     height: 100%;
     background-color: #e41c6f;
     border-radius: 0.3rem;
+    transition: width 0.5s 0.5s ease-in-out;
 }
 
 .services {
